@@ -16,13 +16,12 @@
     <meta name="apple-mobile-web-app-title" content="音乐搜索器">
     <meta name="application-name" content="音乐搜索器">
     <meta name="format-detection" content="telephone=no">
-    <link rel="shortcut icon" href="icon.ico">
+    <link rel="shortcut icon" href="pic/icon.ico">
     <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png">
     <link rel="stylesheet" href="//cdn.staticfile.org/amazeui/2.3.0/css/amazeui.min.css">
-    <link rel="stylesheet" href="static/css/style.css?v1.7.3">
+    <link rel="stylesheet" href="css/music-style.css">
 </head>
 <body>
-    <!--[if lte IE 9]>
         <script type="text/javascript">
             (function(){
                 var t = '你的浏览器也太挫了吧！大佬换一个噻！';
@@ -40,7 +39,6 @@
                 window.close();
             })();
         </script>
-    <![endif]-->
     <section class="am-g about">
         <div class="am-container am-margin-vertical-xl">
             <header class="am-padding-vertical">
@@ -173,33 +171,6 @@
                         <div id="j-player" class="aplayer"></div>
                     </div>
                 </form>
-                <div class="am-u-md-12 am-u-sm-centered am-margin-vertical music-tips">
-                    <h4>帮助：</h4>
-                    <p><b>标红</b> 为 <strong>音乐 ID</strong>，<u>下划线</u> 表示 <strong>音乐地址</strong></p>
-                    <ul>
-                        <li>蜻蜓 FM 的音乐 ID 需要使用 <code>| (管道符)</code> 组合，例如 <code>158696|5266259</code></li>
-                        <!-- <li>全民 K 歌的音乐名称请输入 <code>shareuid</code>，这是用户的 uid，搜索结果是该用户的所有公开作品</li>
-                        <li>全民 K 歌的音乐 ID 请输入 <code>shareid</code> 这是单曲分享 id，搜索结果是该单曲信息</li> -->
-                    </ul>
-                    <blockquote id="j-quote" class="music-overflow">
-                        <p><span>网易：</span><u>http://music.163.com/#/song?id=<b>25906124</b></u></p>
-                        <p><span>ＱＱ：</span><u>http://y.qq.com/n/yqq/song/<b>002B2EAA3brD5b</b>.html</u></p>
-                        <p><span>酷狗：</span><u>http://www.kugou.com/song/#hash=<b>08228af3cb404e8a4e7e9871bf543ff6</b></u></p>
-                        <p><span>酷我：</span><u>http://www.kuwo.cn/yinyue/<b>382425</b>/</u></p>
-                        <p><span>虾米：</span><u>http://www.xiami.com/song/<b>2113248</b></u></p>
-                        <p><span>百度：</span><u>http://music.taihe.com/song/<b>266069</b></u></p>
-                        <p><span>一听：</span><u>http://www.1ting.com/player/b6/player_<b>357838</b>.html</u></p>
-                        <p><span>咪咕：</span><u>http://music.migu.cn/v3/music/song/<b>477803</b></u></p>
-                        <p><span>荔枝：</span><u>http://www.lizhi.fm/1947925/<b>2498707770886461446</b></u></p>
-                        <p><span>蜻蜓：</span><u>http://www.qingting.fm/channels/<b>158696</b>/programs/<b>5266259</b></u></p>
-                        <p><span>喜马拉雅：</span><u>http://www.ximalaya.com/51701370/sound/<b>24755731</b></u></p>
-                        <!-- <p><span>全民K歌 (shareuid)：</span><u>http://kg.qq.com/node/personal?uid=<b>619a958c25283e88</b></u></p>
-                        <p><span>全民K歌 (shareid)：</span><u>https://kg.qq.com/node/play?s=<b>FA3h1gFhd6Vk7Ft4</b></u></p> -->
-                        <p><span>5sing原创：</span><u>http://5sing.kugou.com/yc/<b>3082899</b>.html</u></p>
-                        <p><span>5sing翻唱：</span><u>http://5sing.kugou.com/fc/<b>14369766</b>.html</u></p>
-                    </blockquote>
-                    <div id="j-more" class="music-more">查看更多</div>
-                </div>
             </div>
         </div>
         <div class="am-popup" id="copr-info">
@@ -222,6 +193,6 @@
     <script src="//cdn.staticfile.org/amazeui/2.3.0/js/amazeui.min.js"></script>
     <script src="//cdn.staticfile.org/aplayer/1.6.0/APlayer.min.js"></script>
     <script src="//cdn.staticfile.org/Base64/1.0.1/base64.min.js"></script>
-    <script src="static/js/music.js?v1.7.3"></script>
+    <script src="js/music-js.js"></script>
 </body>
 </html>
