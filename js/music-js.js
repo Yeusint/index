@@ -2,7 +2,7 @@
 
 /**
  *
- * ÒôÀÖËÑË÷Æ÷ - JS ÎÄ¼ş
+ * éŸ³ä¹æœç´¢å™¨ - JS æ–‡ä»¶
  *
  * @author  MaiCong <i@maicong.me>
  * @link    https://github.com/maicong/music
@@ -11,7 +11,7 @@
  */
 
 $(function() {
-  // »ñÈ¡²ÎÊı
+  // è·å–å‚æ•°
   function q(key) {
     var value = null;
     var tmp = [];
@@ -27,20 +27,20 @@ $(function() {
     return value;
   }
 
-  // ¼ÓÈëÀúÊ·¼ÇÂ¼
+  // åŠ å…¥å†å²è®°å½•
   function pushState(title, link) {
     if (window.history && window.history.pushState) {
       window.history.pushState(null, title, link);
     }
   }
 
-  // »ñÈ¡ url
+  // è·å– url
   function getUrl(path) {
     var url = location.href.split('?')[0];
     return path ? url + path : url;
   }
 
-  // ÉêÃ÷±äÁ¿
+  // ç”³æ˜å˜é‡
   var player = null;
   var playerList = [];
   var nopic = 'static/img/nopic.jpg';
@@ -50,7 +50,7 @@ $(function() {
   var qType = q('type');
   var siteTitle = document.title;
 
-  // Èç¹û²ÎÊı´æÔÚ name/id ºÍ type
+  // å¦‚æœå‚æ•°å­˜åœ¨ name/id å’Œ type
   if ((qName || qId) && qType) {
     setTimeout(function() {
       $('#j-input').val(qName || qId);
@@ -65,7 +65,7 @@ $(function() {
     }, 0);
   }
 
-  // Èç¹û²ÎÊı´æÔÚ url
+  // å¦‚æœå‚æ•°å­˜åœ¨ url
   if (qUrl) {
     setTimeout(function() {
       $('#j-type').hide();
@@ -75,12 +75,12 @@ $(function() {
     }, 0);
   }
 
-  // Tab ÇĞ»»
+  // Tab åˆ‡æ¢
   $('#j-nav').on('click', 'li', function() {
     var holder = {
-      name: 'ÀıÈç: ²»ÒªËµ»° ³ÂŞÈÑ¸',
-      id: 'ÀıÈç: 25906124',
-      url: 'ÀıÈç: http://music.163.com/#/song?id=25906124',
+      name: 'ä¾‹å¦‚: ä¸è¦è¯´è¯ é™ˆå¥•è¿…',
+      id: 'ä¾‹å¦‚: 25906124',
+      url: 'ä¾‹å¦‚: http://music.163.com/#/song?id=25906124',
       pattern_name: '^.+$',
       pattern_id: '^[\\w\\/\\|]+$',
       pattern_url: '^https?:\\/\\/\\S+$'
@@ -111,7 +111,7 @@ $(function() {
     }
   });
 
-  // ÊäÈëÑéÖ¤
+  // è¾“å…¥éªŒè¯
   $('#j-validator').validator({
     onValid: function onValid(v) {
       $(v.field)
@@ -123,9 +123,9 @@ $(function() {
       var $field = $(v.field);
       var $group = $field.closest('.am-form-group');
       var msgs = {
-        name: '½« Ãû³Æ ºÍ ×÷Õß Ò»ÆğÊäÈë¿ÉÌá¸ßÆ¥Åä¶È',
-        id: 'ÊäÈë´íÎó£¬Çë²é¿´ÏÂÃæµÄ°ïÖú',
-        url: 'ÊäÈë´íÎó£¬Çë²é¿´ÏÂÃæµÄ°ïÖú'
+        name: 'å°† åç§° å’Œ ä½œè€… ä¸€èµ·è¾“å…¥å¯æé«˜åŒ¹é…åº¦',
+        id: 'è¾“å…¥é”™è¯¯ï¼Œè¯·æŸ¥çœ‹ä¸‹é¢çš„å¸®åŠ©',
+        url: 'è¾“å…¥é”™è¯¯ï¼Œè¯·æŸ¥çœ‹ä¸‹é¢çš„å¸®åŠ©'
       };
       var $alert = $group.find('.am-alert');
       var msg = msgs[$field.data('filter')] || this.getValidationMessage(v);
@@ -147,7 +147,7 @@ $(function() {
         var type =
           filter === 'url' ? '_' : $('input[name="music_type"]:checked').val();
         var page = 1;
-        var $more = $('<div class="aplayer-more">ÔØÈë¸ü¶à</div>');
+        var $more = $('<div class="aplayer-more">è½½å…¥æ›´å¤š</div>');
         var isload = false;
         var ajax = function ajax(input, filter, type, page) {
           $.ajax({
@@ -179,18 +179,18 @@ $(function() {
                 $('#j-input').attr('disabled', true);
                 $('#j-submit').button('loading');
               } else {
-                $more.text('ÇëÉÔºó...');
+                $more.text('è¯·ç¨å...');
               }
             },
             success: function success(result) {
               if (result.code === 200 && result.data) {
                 result.data.map(function(v) {
-                  if (!v.title) v.title = 'ÔİÎŞ';
-                  if (!v.author) v.author = 'ÔİÎŞ';
+                  if (!v.title) v.title = 'æš‚æ— ';
+                  if (!v.author) v.author = 'æš‚æ— ';
                   if (!v.pic) v.pic = nopic;
-                  if (!v.lrc) v.lrc = '[00:00.00] ÔİÎŞ¸è´Ê';
+                  if (!v.lrc) v.lrc = '[00:00.00] æš‚æ— æ­Œè¯';
                   if (!/\[00:(\d{2})\./.test(v.lrc)) {
-                    v.lrc = '[00:00.00] ÎŞĞ§¸è´Ê';
+                    v.lrc = '[00:00.00] æ— æ•ˆæ­Œè¯';
                   }
                 });
                 var setValue = function setValue(data) {
@@ -267,7 +267,7 @@ $(function() {
                     );
                   };
                   document.title =
-                    'ÕıÔÚ²¥·Å: ' + data.title + ' - ' + data.author;
+                    'æ­£åœ¨æ’­æ”¾: ' + data.title + ' - ' + data.author;
                   setValue(data);
                 });
                 player.on('ended', function() {
@@ -276,17 +276,17 @@ $(function() {
                 if (result.data.length < 10) {
                   $more.hide();
                 } else {
-                  $more.text('ÔØÈë¸ü¶à');
+                  $more.text('è½½å…¥æ›´å¤š');
                 }
               } else {
                 if (page === 1) {
                   $('#j-input')
                     .closest('.am-form-group')
                     .find('.am-alert')
-                    .html(result.error || '(¡ã©`¡ã¡¨) ·şÎñÆ÷ºÃÏñ°Õ¹¤ÁË')
+                    .html(result.error || '(Â°ãƒ¼Â°ã€ƒ) æœåŠ¡å™¨å¥½åƒç½¢å·¥äº†')
                     .show();
                 } else {
-                  $more.text('Ã»ÓĞÁË');
+                  $more.text('æ²¡æœ‰äº†');
                   setTimeout(function() {
                     $more.slideUp();
                   }, 1000);
@@ -295,9 +295,9 @@ $(function() {
             },
             error: function error(e, t) {
               if (page === 1) {
-                var err = '(¡ã©`¡ã¡¨) ³öÁËµãĞ¡ÎÊÌâ£¬ÇëÖØÊÔ';
+                var err = '(Â°ãƒ¼Â°ã€ƒ) å‡ºäº†ç‚¹å°é—®é¢˜ï¼Œè¯·é‡è¯•';
                 if (t === 'timeout') {
-                  err = '(¡ã©`¡ã¡¨) ÇëÇó³¬Ê±ÁË£¬ÇëÉÔºóÖØÊÔ';
+                  err = '(Â°ãƒ¼Â°ã€ƒ) è¯·æ±‚è¶…æ—¶äº†ï¼Œè¯·ç¨åé‡è¯•';
                 }
                 $('#j-input')
                   .closest('.am-form-group')
@@ -305,7 +305,7 @@ $(function() {
                   .html(err)
                   .show();
               } else {
-                $more.text('(¡ã©`¡ã¡¨) ¼ÓÔØÊ§°ÜÁË£¬µã»÷ÖØÊÔ');
+                $more.text('(Â°ãƒ¼Â°ã€ƒ) åŠ è½½å¤±è´¥äº†ï¼Œç‚¹å‡»é‡è¯•');
               }
             },
             complete: function complete() {
