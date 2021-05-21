@@ -1,16 +1,31 @@
+<?php
+/**
+ *
+ * 音乐搜索器 - 模版文件
+ *
+ * @author  MaiCong <i@maicong.me>
+ * @link    https://github.com/maicong/music
+ * @since   1.5.10
+ *
+ */
 
-<!DOCTYPE html>
+if (!defined('MC_CORE')) {
+    header("Location: /");
+    exit();
+}
+?><!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>音乐搜索器 - 多站合一搜索,音乐在线下载</title>
+    <title>音乐搜索器 - 多站合一音乐搜索,音乐在线试听 - By 麦葱</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="author" content="maicong.me">
     <meta name="keywords" content="音乐搜索,音乐搜索器,音乐试听,音乐在线听,网易云音乐,QQ音乐,酷狗音乐,酷我音乐,虾米音乐,百度音乐,一听音乐,咪咕音乐,荔枝FM,蜻蜓FM,喜马拉雅FM,全民K歌,5sing原创翻唱音乐">
-    <meta name="description" content="标哥特制多站合一音乐搜索解决方案，可搜索试听网易云音乐、QQ音乐、酷狗音乐、酷我音乐、虾米音乐、百度音乐、一听音乐、咪咕音乐、荔枝FM、蜻蜓FM、喜马拉雅FM、全民K歌、5sing原创翻唱音乐。">
+    <meta name="description" content="麦葱特制多站合一音乐搜索解决方案，可搜索试听网易云音乐、QQ音乐、酷狗音乐、酷我音乐、虾米音乐、百度音乐、一听音乐、咪咕音乐、荔枝FM、蜻蜓FM、喜马拉雅FM、全民K歌、5sing原创翻唱音乐。">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="音乐搜索器">
@@ -18,8 +33,9 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png">
+    <link rel="canonical" href="http://music.2333.me/">
     <link rel="stylesheet" href="//cdn.staticfile.org/amazeui/2.3.0/css/amazeui.min.css">
-    <link rel="stylesheet" href="css/music-style.css">
+    <link rel="stylesheet" href="static/css/style.css?v<?php echo MC_VERSION; ?>">
 </head>
 <body>
     <!--[if lte IE 9]>
@@ -45,7 +61,7 @@
         <div class="am-container am-margin-vertical-xl">
             <header class="am-padding-vertical">
                 <h2 class="about-title about-color">音乐搜索器</h2>
-                <p class="am-text-center">多站合一音乐搜索解决方案(音乐下载-音乐ID-音乐歌词 )</p>
+                <p class="am-text-center">麦葱特制多站合一音乐搜索解决方案</p>
             </header>
             <hr>
             <div class="am-u-lg-12 am-padding-vertical">
@@ -67,46 +83,14 @@
                             <div class="am-alert am-alert-danger am-animation-shake"></div>
                         </div>
                         <div id="j-type" class="am-form-group am-text-center music-type">
-                                                    <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="netease" data-am-ucheck checked>
-                                网易                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="qq" data-am-ucheck>
-                                ＱＱ                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="kugou" data-am-ucheck>
-                                酷狗                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="kuwo" data-am-ucheck>
-                                酷我                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="xiami" data-am-ucheck>
-                                虾米                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="baidu" data-am-ucheck>
-                                百度                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="1ting" data-am-ucheck>
-                                一听                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="migu" data-am-ucheck>
-                                咪咕                            </label>
-                            <br />                                                    <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="lizhi" data-am-ucheck>
-                                荔枝                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="qingting" data-am-ucheck>
-                                蜻蜓                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="ximalaya" data-am-ucheck>
-                                喜马拉雅                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="5singyc" data-am-ucheck>
-                                5sing原创                            </label>
-                                                                                <label class="am-radio-inline">
-                                <input type="radio" name="music_type" value="5singfc" data-am-ucheck>
-                                5sing翻唱                            </label>
-                                                                            </div>
+                        <?php foreach ($music_type_list as $key => $val) { ?>
+                            <label class="am-radio-inline">
+                                <input type="radio" name="music_type" value="<?php echo $key; ?>" data-am-ucheck<?php if ($key === 'netease') echo ' checked'; ?>>
+                                <?php echo $val; ?>
+                            </label>
+                            <?php if ($key === 'migu') echo '<br />'; ?>
+                        <?php } ?>
+                        </div>
                         <button id="j-submit" type="submit" class="am-btn am-btn-primary am-btn-lg am-btn-block am-radius" data-am-loading="{spinner: 'cog', loadingText: '正在搜索相关音乐...', resetText: 'Get &#x221A;'}">Get &#x221A;</button>
                     </div>
                 </form>
@@ -178,8 +162,8 @@
                     <p><b>标红</b> 为 <strong>音乐 ID</strong>，<u>下划线</u> 表示 <strong>音乐地址</strong></p>
                     <ul>
                         <li>蜻蜓 FM 的音乐 ID 需要使用 <code>| (管道符)</code> 组合，例如 <code>158696|5266259</code></li>
-                        <!-- <li>全民 K 歌的音乐名称请输入 <code>shareuid</code>，这是用户的 uid，搜索结果是该用户的所有公开作品</li>
-                        <li>全民 K 歌的音乐 ID 请输入 <code>shareid</code> 这是单曲分享 id，搜索结果是该单曲信息</li> -->
+                        <li>全民 K 歌的音乐名称请输入 <code>shareuid</code>，这是用户的 uid，搜索结果是该用户的所有公开作品</li>
+                        <li>全民 K 歌的音乐 ID 请输入 <code>shareid</code> 这是单曲分享 id，搜索结果是该单曲信息</li>
                     </ul>
                     <blockquote id="j-quote" class="music-overflow">
                         <p><span>网易：</span><u>http://music.163.com/#/song?id=<b>25906124</b></u></p>
@@ -187,14 +171,14 @@
                         <p><span>酷狗：</span><u>http://www.kugou.com/song/#hash=<b>08228af3cb404e8a4e7e9871bf543ff6</b></u></p>
                         <p><span>酷我：</span><u>http://www.kuwo.cn/yinyue/<b>382425</b>/</u></p>
                         <p><span>虾米：</span><u>http://www.xiami.com/song/<b>2113248</b></u></p>
-                        <p><span>百度：</span><u>http://music.taihe.com/song/<b>266069</b></u></p>
+                        <p><span>百度：</span><u>http://music.baidu.com/song/<b>266069</b></u></p>
                         <p><span>一听：</span><u>http://www.1ting.com/player/b6/player_<b>357838</b>.html</u></p>
-                        <p><span>咪咕：</span><u>http://music.migu.cn/v3/music/song/<b>477803</b></u></p>
+                        <p><span>咪咕：</span><u>http://music.migu.cn/v2/music/song/<b>477803</b></u></p>
                         <p><span>荔枝：</span><u>http://www.lizhi.fm/1947925/<b>2498707770886461446</b></u></p>
                         <p><span>蜻蜓：</span><u>http://www.qingting.fm/channels/<b>158696</b>/programs/<b>5266259</b></u></p>
                         <p><span>喜马拉雅：</span><u>http://www.ximalaya.com/51701370/sound/<b>24755731</b></u></p>
-                        <!-- <p><span>全民K歌 (shareuid)：</span><u>http://kg.qq.com/node/personal?uid=<b>619a958c25283e88</b></u></p>
-                        <p><span>全民K歌 (shareid)：</span><u>https://kg.qq.com/node/play?s=<b>FA3h1gFhd6Vk7Ft4</b></u></p> -->
+                        <p><span>全民K歌 (shareuid)：</span><u>http://kg.qq.com/node/personal?uid=<b>619a958c25283e88</b></u></p>
+                        <p><span>全民K歌 (shareid)：</span><u>https://kg.qq.com/node/play?s=<b>FA3h1gFhd6Vk7Ft4</b></u></p>
                         <p><span>5sing原创：</span><u>http://5sing.kugou.com/yc/<b>3082899</b>.html</u></p>
                         <p><span>5sing翻唱：</span><u>http://5sing.kugou.com/fc/<b>14369766</b>.html</u></p>
                     </blockquote>
@@ -211,21 +195,17 @@
                 <div class="am-popup-bd">
                     <p>本站音频文件来自各网站接口，本站不会修改任何音频文件</p>
                     <p>音频版权来自各网站，本站只提供数据查询服务，不提供任何音频存储和贩卖服务</p>
-                       <p>如果有侵犯平台利益联系QQ2026094946，马上关闭网站.</p>
-       
                 </div>
             </div>
         </div>
     </section>
     <footer class="footer">
-        <p class="am-text-sm">2021&nbsp;<a href="http://dh.bmqeo.cn/" target="_blank" rel="noreferrer">七彩虹导航网(期下所有网站)</a>&nbsp;<a href="javascript:void(0)" data-am-modal="{target: '#copr-info'}">免责声明</a></p>
-        <p class="am-text-sm">&nbsp;<a href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">工信备案号:粤ICP备20010893号</a>&nbsp;</p>
-    
+        <p class="am-text-sm">v<?php echo MC_VERSION; ?>&nbsp;&copy;&nbsp;<?php echo date('Y'); ?>&nbsp;<a href="https://github.com/maicong/music" target="_blank" rel="author">源码下载</a>&nbsp;<a href="https://maicong.me/msg" target="_blank">意见反馈</a>&nbsp;<a href="javascript:void(0)" data-am-modal="{target: '#copr-info'}">免责声明</a></p>
     </footer>
-    <script src="//cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdn.staticfile.org/amazeui/2.3.0/js/amazeui.min.js"></script>
     <script src="//cdn.staticfile.org/aplayer/1.6.0/APlayer.min.js"></script>
     <script src="//cdn.staticfile.org/Base64/1.0.1/base64.min.js"></script>
-    <script src="js/music-jc.js"></script>
+    <script src="static/js/music.js?v<?php echo MC_VERSION; ?>"></script>
 </body>
 </html>
