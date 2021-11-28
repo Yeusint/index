@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>C4</title>
+    <style>
+        div:not(#r){
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        div#c{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        div#r{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 150px;
+            left: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="t"></div>
+<div id="c" onclick="t()"></div>
+<img src="/pic/cs.bmp" alt="SB" id="g">
+<script>
+    let m_x = 0;
+    let m_y = 0;
+    let r = 0;
+    let img = document.getElementById('g');
+    document.body.addEventListener('mousemove', function (e) {
+        m_x = getPos(e).x;
+        m_y = getPos(e).y;
+    })
+    function t() {
+        document.getElementById('t').style.top = (m_y - 100).toString() + "px";
+        document.getElementById('t').style.left = (m_x - 50).toString() + 'px';
+        r = r + 10;
+        img.style.transform = "rotate(" + r.toString() + "deg)";
+    }
+    function getPos(e) {
+        let mouse={x:0,y:0}
+        e = e||event;
+
+        if(e.pageX||e.pageY){
+            mouse.x=e.pageX;
+            mouse.y=e.pageY;
+        }else{
+            mouse.x=e.pageX+document.body.scrollLeft+document.document.documentElement.scrollLeft;
+            mouse.y=e.pageY+document.body.scrollTop+document.document.documentElement.scrollTop;
+        }
+        return mouse;
+    }
+    let arrow=function () {
+        this.x=0;
+        this.y=0;
+        this.rolation=0;
+    }
+    Arrow=new arrow();
+    Arrow.x=img.width/2;
+    Arrow.y=img.height/2;
+
+</script>
+</body>
+</html>

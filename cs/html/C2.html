@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CS</title>
+    <style>
+        .input-val {
+            width: 200px;
+            height: 32px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        #canvas {
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .btn {
+            display: block;
+            margin-top: 20px;
+            height: 32px;
+            width: 100px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #457adb;
+            border: none;
+            border-radius: 50px;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/ind.js" ></script>
+    <script type="text/javascript" src="../../js/ind-create.js" ></script>
+    <link rel="stylesheet" href="../../css/ind.css">
+</head>
+<body>
+<div class="code">
+    <input type="text" value="" placeholder="请输入验证码（不区分大小写）" id="i">
+    <canvas id="d" width="100" height="50" style="cursor: pointer"></canvas>
+    <button class="btn" onclick="f()">提交</button>
+</div>
+<script>
+    create()
+    var t = draw(4,'d');
+    function f() {
+        if (document.getElementById('i').value === t){
+            msg('cor','成功！');
+            t = draw(4,'d');
+        }else {
+            msg('err','失败！');
+            t = draw(4,'d');
+        }
+    }
+    document.getElementById('d').onclick = function (){t = draw(4,'d');}
+</script>
+</body>
+</html>

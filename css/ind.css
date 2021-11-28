@@ -1,0 +1,162 @@
+.box {
+    position: absolute;
+    padding: 20px;
+    background-color: #667788;
+    height: auto;
+    top: 50px;
+    left: 266px;
+}
+.i-box {
+    padding: 2px;
+    border-radius: 5px;
+    background-color: #667788;
+    border: 1px solid #b0c4de;
+    height: auto;
+    margin-bottom: 40px;
+    box-shadow: none;
+    transition-duration: 0.5s;
+}
+.i-box div:not(.tit-2) {
+    float: left;
+}
+.focus-box div:not(.tit-2) {
+    float: left;
+}
+.tit-2 {
+    width: 50px;
+    height: 34px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+input {
+    width: 230px;
+    height: 34px;
+    margin: 0;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    background-color: #667788;
+}
+div#c {
+    position: relative;
+    left: 50%;
+    float: left;
+}
+div.msg {
+    position: relative;
+    left: -50%;
+    color: white;
+    /*
+    error
+    background-color: #f65c5c;
+    warning
+    background-color: #f8ea05;
+    tip
+    background-color: #1B9AF7;
+    */
+    padding: 5px 100px;
+    text-align: center;
+    border-radius: 5px;
+    transition: top 0.5s,opacity 0.5s;
+    top: -50px;
+    opacity: 0;
+    margin-bottom: 10px;
+}
+br {
+    height: 40px;
+}
+button {
+    color: #666;
+    font-weight: 300;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none #EEE;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    outline: none;
+}
+button[value="登录"] {
+    background-color: #1B9AF7;
+    border-color: #1B9AF7;
+    color: #FFF;
+}
+button[value="登录"]:hover {
+    background-color: #4cb0f9;
+    border-color: #4cb0f9;
+    color: #FFF;
+}
+button[value="登录"]:active {
+    background-color: #2798eb;
+    border-color: #2798eb;
+    color: #0880d7;
+}
+button[value="注册"] {
+    background-color: #7B72E9;
+    border-color: #7B72E9;
+    color: #FFF;
+}
+button[value="注册"]:hover {
+    background-color: #a49ef0;
+    border-color: #a49ef0;
+    color: #FFF;
+}
+button[value="注册"]:active {
+    background-color: #827ae1;
+    border-color: #827ae1;
+    color: #5246e2;
+}
+img {
+    user-select: none;
+}
+.line {
+    width: 1px;
+    background-color: #b0c4de;
+    transition-duration: 0.5s;
+}
+.focus-box {
+    padding: 2px;
+    border-radius: 5px;
+    background-color: #667788;
+    border: 1px solid #b0c4de;
+    height: auto;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px 5px rgb(255, 198, 177);
+    transition-duration: 0.5s;
+}
+.focus-box .line {
+    width: 1px;
+    background-color: #ffc0cb;
+    transition-duration: 0.5s;
+}
+canvas[id="canvas"] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+body {
+    background-image: linear-gradient(to right, #212736, #080564FF);
+}

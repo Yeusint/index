@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CS3</title>
+    <style>
+        div#r{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            opacity: 0;
+        }
+        html,body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="r"></div>
+<p id="mouse_x"></p>
+<p id="mouse_y"></p>
+<p id="x"></p>
+<p id="y"></p>
+<img src="/pic/cs.bmp" alt="SB" style="position: absolute;top: 500px;left: 200px" id="p">
+<script>
+    window.onload = function () {
+        let a = document.getElementById('mouse_x');
+        let b = document.getElementById('mouse_y');
+        let c = document.getElementById('x');
+        let d = document.getElementById('y');
+        let p = document.getElementById('p');
+        let g = {
+            d: document.getElementById('p'),
+            x: document.getElementById('p').offsetLeft,
+            y: document.getElementById('p').offsetTop,
+            center_x: document.getElementById('p').offsetLeft + document.getElementById('p').clientWidth/2,
+            center_y: document.getElementById('p').offsetTop + document.getElementById('p').clientHeight/2
+        }
+        console.log(
+            "x:" + g.x.toString() +
+            "\ny:" + g.y.toString() +
+            "\ncenter_x:" + g.center_x.toString() +
+            "\ncenter_y:" + g.center_y.toString()
+        );
+        document.getElementById('r').addEventListener('mousemove', function (e) {
+            //获取角度开始
+            let xd = {
+                x: e.clientX - g.center_x,
+                x_abs: Math.abs(e.clientX - g.center_x),
+                y: e.clientY - g.center_y,
+                y_abs: Math.abs(e.clientY - g.center_y),
+                t: Math.sqrt(Math.pow(e.clientX - g.center_x, 2) + Math.pow(e.clientY - g.center_y, 2))
+            }
+            let jd;
+            let jg;
+            if (xd.x < 0) {
+                jd = Math.asin(xd.y / xd.t);
+                jg = Math.abs(jd * 180 / Math.PI - 90) + 180;
+            } else {
+                jd = Math.asin(xd.y / xd.t);
+                jg = jd * 180 / Math.PI + 90;
+            }
+            //获取角度结束
+            a.innerHTML = "鼠标X坐标：" + e.clientX.toString() + "px";
+            b.innerHTML = "鼠标Y坐标：" + e.clientY.toString() + "px";
+            c.innerHTML = "相对X坐标：" + (e.clientX - g.center_x).toString() + "px";
+            d.innerHTML = "相对Y坐标：" + (e.clientY - g.center_y).toString() + "px" + "角度：" + jg + "°";
+            p.style.transform = "rotate(" + jg.toString() + "deg)";
+        })
+    }
+</script>
+</body>
+</html>
